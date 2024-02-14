@@ -18,7 +18,7 @@ export default function ShoppingForm() {
     }
 
     const handleChange = (event) => {
-        setName(event.target.value.toUpperCase());
+        setName(event.target.value.toString());
     };
 
     return (
