@@ -30,16 +30,17 @@ export default function ShoppingForm() {
     };
 
     return (
+        <div className="w-full max-w-md bg-slate-700 rounded-lg">
         <form onSubmit={handleSubmit}>
-            <label>
-                Item: 
+            <label className="block mb-3">
+                Item:   
                 <input required type="text" className="text-black" placeholder="Enter item name" value={name} onChange={handleNameChange}/>
             </label>
-            <label>
+            <label className="block mb-3">
                 Quantity: 
                 <input required type="number" className="text-black" min="1" max="99" value={quantity} onChange={handleQuantityChange}/>
             </label>
-            <label>
+            <label className="block mb-3">
                 Category: 
                 <select
                     value={category}
@@ -61,5 +62,6 @@ export default function ShoppingForm() {
             </label>
             <button type="submit" className="bg-green-300 text-white">Submit</button>
         </form>
+        </div>
     );
 }
