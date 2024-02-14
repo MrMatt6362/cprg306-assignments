@@ -17,15 +17,26 @@ export default function ShoppingForm() {
       setCategory("produce");
     }
 
-    const handleChange = (event) => {
+    const handleNameChange = (event) => {
         setName(event.target.value.toString());
+    };
+
+    const handleQuantityChange = (event) => {
+        setQuantity(event.target.value);
     };
 
     return (
         <form onSubmit={handleSubmit}>
             <label>
-                Item:
-                <input type="text" placeholder="Enter item name" value={name} onChange={handleChange}/>
+                Item: 
+                <input type="text" placeholder="Enter item name" value={name} onChange={handleNameChange}/>
+            </label>
+            <label>
+                Quantity: 
+                <input type="number" min="1" max="99" value={quantity} onChange={handleQuantityChange}/>
+            </label>
+            <label>
+                Category: 
             </label>
             <input type="submit" value="[ + ]" />
         </form>
